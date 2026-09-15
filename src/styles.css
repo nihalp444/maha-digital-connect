@@ -176,6 +176,16 @@
   .mobile-menu-button { display: flex; align-items: center; gap: .5rem; font-size: .8rem; font-weight: 700; }
   .mobile-nav { position: absolute; inset-inline: 0; top: 3.5rem; border-top: 1px solid oklch(1 0 0 / 15%); background: var(--primary); padding: .5rem 1rem 1rem; box-shadow: 0 10px 20px oklch(0.15 0.04 25 / 20%); }
   .mobile-nav a { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid oklch(1 0 0 / 12%); padding: .8rem .25rem; font-size: .85rem; font-weight: 600; }
+  .hero-banner { background: var(--utility); padding-block: .75rem; }
+  .hero-frame { position: relative; overflow: hidden; background: var(--card); }
+  .hero-image { display: block; width: 100%; aspect-ratio: 1140 / 420; object-fit: cover; }
+  .hero-arrow { position: absolute; top: 50%; display: grid; width: 2.5rem; height: 2.5rem; place-items: center; border: 1px solid oklch(1 0 0 / 35%); border-radius: 999px; background: oklch(0.2 0.02 40 / 72%); color: var(--primary-foreground); transform: translateY(-50%); transition: background-color .2s ease; }
+  .hero-arrow:hover { background: var(--primary); }
+  .hero-arrow-left { left: .8rem; }
+  .hero-arrow-right { right: .8rem; }
+  .hero-dots { position: absolute; bottom: .75rem; left: 50%; display: flex; gap: .45rem; transform: translateX(-50%); }
+  .hero-dots button { width: .55rem; height: .55rem; border: 1px solid oklch(1 0 0 / 70%); border-radius: 999px; background: oklch(0.2 0.02 40 / 55%); }
+  .hero-dots button[aria-current="true"] { width: 1.5rem; background: var(--secondary); }
   .intro-band { position: relative; overflow: hidden; border-bottom: 1px solid var(--border); background: var(--intro); }
   .intro-band::after { position: absolute; right: -4rem; top: -6rem; width: 22rem; height: 22rem; border: 4rem solid color-mix(in oklab, var(--secondary) 18%, transparent); border-radius: 999px; content: ""; }
   .intro-band .site-container { position: relative; z-index: 1; }
@@ -216,5 +226,5 @@
 }
 
 @media (min-width: 1024px) { .card-row { grid-auto-flow: unset; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: visible; } }
-@media (max-width: 639px) { .site-container { width: min(100% - 1.25rem, 1180px); } .intro-band::after { width: 14rem; height: 14rem; } .card-row { margin-right: -.625rem; } }
+@media (max-width: 639px) { .site-container { width: min(100% - 1.25rem, 1180px); } .hero-banner { padding-block: .5rem; } .hero-frame { width: 100%; } .hero-image { min-height: 12.5rem; object-position: center; } .hero-arrow { width: 2rem; height: 2rem; } .intro-band::after { width: 14rem; height: 14rem; } .card-row { margin-right: -.625rem; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }

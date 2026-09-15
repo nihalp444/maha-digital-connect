@@ -5,6 +5,8 @@ import {
   BriefcaseBusiness,
   Building2,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   GraduationCap,
   Landmark,
   Menu,
@@ -18,15 +20,31 @@ import {
 import { useMemo, useState } from "react";
 import emblem from "../assets/maharashtra-government-emblem.png";
 
+const mahabocwLogo = "/__l5e/assets-v1/7799f571-eaa2-4586-98a4-29c3faa41b2d/mahabocw-logo.png";
+const heroImages = [
+  {
+    src: "/__l5e/assets-v1/8926fd5b-a14b-4fca-9f98-f40d85ebb0bd/mahabocw-hero-1.jpg",
+    alt: "Maharashtra Building and Other Construction Workers Welfare Board services",
+  },
+  {
+    src: "/__l5e/assets-v1/b1eb2cce-8f0d-4cd7-83fa-a70b371ebe19/mahabocw-hero-2.jpg",
+    alt: "Welfare initiatives for construction workers in Maharashtra",
+  },
+  {
+    src: "/__l5e/assets-v1/0079226b-e416-40ce-9c97-5dbff6e07de2/mahabocw-hero-3.jpg",
+    alt: "MahaBOCW worker welfare programmes",
+  },
+] as const;
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Maharashtra Government Digital Services" },
+      { title: "MahaBOCW Digital Services Portal" },
       {
         name: "description",
-        content: "Access Maharashtra education, worker welfare, skill development and government services through one portal.",
+        content: "Access worker welfare, education, skill development and government services through the MahaBOCW portal.",
       },
-      { property: "og:title", content: "Maharashtra Government Digital Services" },
+      { property: "og:title", content: "MahaBOCW Digital Services Portal" },
       {
         property: "og:description",
         content: "A unified gateway to useful digital services from the Government of Maharashtra.",
@@ -92,6 +110,7 @@ const serviceSections = [
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [activeHero, setActiveHero] = useState(0);
   const filteredSections = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     if (!normalized) return serviceSections;
@@ -115,12 +134,12 @@ function Index() {
 
         <div className="identity-bar">
           <div className="site-container flex min-h-24 items-center justify-between gap-4 py-4 lg:min-h-28">
-            <div className="flex min-w-0 items-center gap-4 sm:gap-5">
-              <img src={emblem} alt="Government of Maharashtra emblem" className="h-16 w-12 object-contain sm:h-20 sm:w-15" />
-              <div className="min-w-0 border-l border-border pl-4 sm:pl-5">
-                <p className="font-devanagari text-sm font-bold text-primary sm:text-lg">महाराष्ट्र शासन</p>
-                <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground sm:text-xs">Government of Maharashtra</p>
-                <h2 className="mt-1 text-base font-bold text-foreground sm:text-2xl">Maharashtra Government <span className="hidden sm:inline">Digital Services</span></h2>
+            <div className="flex min-w-0 items-center gap-3 sm:gap-5">
+              <img src={mahabocwLogo} alt="MahaBOCW logo" className="h-17 w-17 shrink-0 object-contain sm:h-21 sm:w-21" />
+              <div className="min-w-0 border-l border-border pl-3 sm:pl-5">
+                <p className="font-devanagari text-[11px] font-bold text-primary sm:text-base">महाराष्ट्र इमारत व इतर बांधकाम कामगार कल्याणकारी मंडळ</p>
+                <h2 className="mt-1 max-w-2xl text-sm font-bold leading-tight text-foreground sm:text-xl">Maharashtra Building &amp; Other Construction Workers Welfare Board</h2>
+                <p className="mt-1 hidden text-[10px] font-semibold uppercase text-muted-foreground sm:block">Government of Maharashtra</p>
               </div>
             </div>
             <div className="hidden items-center gap-3 lg:flex">
@@ -149,11 +168,22 @@ function Index() {
       </header>
 
       <main id="main-content">
+        <section className="hero-banner" aria-label="MahaBOCW highlights">
+          <div className="site-container hero-frame">
+            <img src={heroImages[activeHero].src} alt={heroImages[activeHero].alt} className="hero-image" />
+            <button type="button" className="hero-arrow hero-arrow-left" aria-label="Previous banner" onClick={() => setActiveHero((activeHero + heroImages.length - 1) % heroImages.length)}><ChevronLeft size={24} /></button>
+            <button type="button" className="hero-arrow hero-arrow-right" aria-label="Next banner" onClick={() => setActiveHero((activeHero + 1) % heroImages.length)}><ChevronRight size={24} /></button>
+            <div className="hero-dots" aria-label="Choose banner">
+              {heroImages.map((image, index) => <button key={image.src} type="button" aria-label={`Show banner ${index + 1}`} aria-current={index === activeHero} onClick={() => setActiveHero(index)} />)}
+            </div>
+          </div>
+        </section>
+
         <section className="intro-band">
-          <div className="site-container py-10 sm:py-14">
-            <div className="section-kicker"><span></span>Unified Citizen Portal</div>
-            <h1>Maharashtra Government<br className="hidden sm:block" /> Digital Services</h1>
-            <p>Access education, worker welfare, skill development and other useful services through one platform.</p>
+          <div className="site-container py-8 sm:py-10">
+            <div className="section-kicker"><span></span>MahaBOCW Digital Services</div>
+            <h1>Services for Building &amp;<br className="hidden sm:block" /> Construction Workers</h1>
+            <p>Access worker welfare, education, skill development and useful government services through one trusted platform.</p>
           </div>
         </section>
 
@@ -195,8 +225,8 @@ function Index() {
       </main>
 
       <footer>
-        <div className="footer-main"><div className="site-container grid gap-7 py-9 md:grid-cols-[1fr_auto] md:items-center"><div className="flex items-center gap-4"><img src={emblem} alt="" className="h-14 w-11 object-contain brightness-0 invert" /><div><p className="font-devanagari text-sm font-bold">महाराष्ट्र शासन</p><h2 className="mt-1 text-lg font-bold">Government of Maharashtra</h2></div></div><nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-3 text-sm">{['Useful Links', 'Contact', 'Privacy', 'Disclaimer', 'Accessibility'].map((item) => <a href={`#${item.toLowerCase().replaceAll(' ', '-')}`} key={item}>{item}</a>)}</nav></div></div>
-        <div className="footer-bottom"><div className="site-container flex flex-col gap-2 py-4 text-xs sm:flex-row sm:items-center sm:justify-between"><p>© Government of Maharashtra. All Rights Reserved.</p><p>Official Digital Services Portal</p></div></div>
+        <div className="footer-main"><div className="site-container grid gap-7 py-9 md:grid-cols-[1fr_auto] md:items-center"><div className="flex items-center gap-4"><img src={mahabocwLogo} alt="" className="h-16 w-16 object-contain" /><div><p className="font-devanagari text-sm font-bold">महाराष्ट्र इमारत व इतर बांधकाम कामगार कल्याणकारी मंडळ</p><h2 className="mt-1 max-w-lg text-base font-bold">Maharashtra Building &amp; Other Construction Workers Welfare Board</h2></div></div><nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-3 text-sm">{['Useful Links', 'Contact', 'Privacy', 'Disclaimer', 'Accessibility'].map((item) => <a href={`#${item.toLowerCase().replaceAll(' ', '-')}`} key={item}>{item}</a>)}</nav></div></div>
+        <div className="footer-bottom"><div className="site-container flex flex-col gap-2 py-4 text-xs sm:flex-row sm:items-center sm:justify-between"><p>© MahaBOCW, Government of Maharashtra. All Rights Reserved.</p><p>Digital Services Portal</p></div></div>
       </footer>
     </div>
   );
