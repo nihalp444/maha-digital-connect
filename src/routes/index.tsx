@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 
+const maharashtraEmblem = "/__l5e/assets-v1/c9e43318-83b0-4623-a364-3dc34b3e1a4a/maharashtra-state-seal.png";
 const mahabocwLogo = "/__l5e/assets-v1/7799f571-eaa2-4586-98a4-29c3faa41b2d/mahabocw-logo.png";
 const heroImages = [
   {
@@ -134,6 +135,7 @@ function Index() {
         <div className="identity-bar">
           <div className="site-container flex min-h-24 items-center justify-between gap-4 py-4 lg:min-h-28">
             <div className="flex min-w-0 items-center gap-3 sm:gap-5">
+              <img src={maharashtraEmblem} alt="Government of Maharashtra emblem" className="h-17 w-17 shrink-0 object-contain sm:h-21 sm:w-21" />
               <img src={mahabocwLogo} alt="MahaBOCW logo" className="h-17 w-17 shrink-0 object-contain sm:h-21 sm:w-21" />
               <div className="min-w-0 border-l border-border pl-3 sm:pl-5">
                 <p className="font-devanagari text-[11px] font-bold text-primary sm:text-base">महाराष्ट्र इमारत व इतर बांधकाम कामगार कल्याणकारी मंडळ</p>
@@ -224,7 +226,7 @@ function Index() {
       </main>
 
       <footer>
-        <div className="footer-main"><div className="site-container grid gap-7 py-9 md:grid-cols-[1fr_auto] md:items-center"><div className="flex items-center gap-4"><img src={mahabocwLogo} alt="" className="h-16 w-16 object-contain" /><div><p className="font-devanagari text-sm font-bold">महाराष्ट्र इमारत व इतर बांधकाम कामगार कल्याणकारी मंडळ</p><h2 className="mt-1 max-w-lg text-base font-bold">Maharashtra Building &amp; Other Construction Workers Welfare Board</h2></div></div><nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-3 text-sm">{['Useful Links', 'Contact', 'Privacy', 'Disclaimer', 'Accessibility'].map((item) => <a href={`#${item.toLowerCase().replaceAll(' ', '-')}`} key={item}>{item}</a>)}</nav></div></div>
+        <div className="footer-main"><div className="site-container grid gap-7 py-9 md:grid-cols-[1fr_auto] md:items-center"><div className="flex items-center gap-4"><img src={maharashtraEmblem} alt="" className="h-16 w-16 object-contain" /><img src={mahabocwLogo} alt="" className="h-16 w-16 object-contain" /><div><p className="font-devanagari text-sm font-bold">महाराष्ट्र इमारत व इतर बांधकाम कामगार कल्याणकारी मंडळ</p><h2 className="mt-1 max-w-lg text-base font-bold">Maharashtra Building &amp; Other Construction Workers Welfare Board</h2></div></div><nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-3 text-sm">{['Useful Links', 'Contact', 'Privacy', 'Disclaimer', 'Accessibility'].map((item) => <a href={`#${item.toLowerCase().replaceAll(' ', '-')}`} key={item}>{item}</a>)}</nav></div></div>
         <div className="footer-bottom"><div className="site-container flex flex-col gap-2 py-4 text-xs sm:flex-row sm:items-center sm:justify-between"><p>© MahaBOCW, Government of Maharashtra. All Rights Reserved.</p><p>Digital Services Portal</p></div></div>
       </footer>
     </div>
