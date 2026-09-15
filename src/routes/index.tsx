@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 
+const maharashtraEmblem = "/__l5e/assets-v1/6507b783-3002-4840-b6ca-b4eebdd94886/maharashtra-government-emblem.png";
 const mahabocwLogo = "/__l5e/assets-v1/7799f571-eaa2-4586-98a4-29c3faa41b2d/mahabocw-logo.png";
 const heroImages = [
   {
@@ -134,6 +135,7 @@ function Index() {
         <div className="identity-bar">
           <div className="site-container flex min-h-24 items-center justify-between gap-4 py-4 lg:min-h-28">
             <div className="flex min-w-0 items-center gap-3 sm:gap-5">
+              <img src={maharashtraEmblem} alt="Government of Maharashtra emblem" className="h-17 w-17 shrink-0 object-contain sm:h-21 sm:w-21" />
               <img src={mahabocwLogo} alt="MahaBOCW logo" className="h-17 w-17 shrink-0 object-contain sm:h-21 sm:w-21" />
               <div className="min-w-0 border-l border-border pl-3 sm:pl-5">
                 <p className="font-devanagari text-[11px] font-bold text-primary sm:text-base">महाराष्ट्र इमारत व इतर बांधकाम कामगार कल्याणकारी मंडळ</p>
