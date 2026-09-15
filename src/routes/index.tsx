@@ -18,7 +18,6 @@ import {
   X,
 } from "lucide-react";
 import { useMemo, useState } from "react";
-import emblem from "../assets/maharashtra-government-emblem.png";
 
 const mahabocwLogo = "/__l5e/assets-v1/7799f571-eaa2-4586-98a4-29c3faa41b2d/mahabocw-logo.png";
 const heroImages = [
@@ -170,7 +169,7 @@ function Index() {
       <main id="main-content">
         <section className="hero-banner" aria-label="MahaBOCW highlights">
           <div className="site-container hero-frame">
-            <img src={heroImages[activeHero].src} alt={heroImages[activeHero].alt} className="hero-image" />
+            <img src={heroImages[activeHero]?.src ?? heroImages[0].src} alt={heroImages[activeHero]?.alt ?? heroImages[0].alt} className="hero-image" />
             <button type="button" className="hero-arrow hero-arrow-left" aria-label="Previous banner" onClick={() => setActiveHero((activeHero + heroImages.length - 1) % heroImages.length)}><ChevronLeft size={24} /></button>
             <button type="button" className="hero-arrow hero-arrow-right" aria-label="Next banner" onClick={() => setActiveHero((activeHero + 1) % heroImages.length)}><ChevronRight size={24} /></button>
             <div className="hero-dots" aria-label="Choose banner">
