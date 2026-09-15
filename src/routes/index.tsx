@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 
-const maharashtraEmblem = "/__l5e/assets-v1/6507b783-3002-4840-b6ca-b4eebdd94886/maharashtra-government-emblem.png";
+const maharashtraEmblem = "/__l5e/assets-v1/c9e43318-83b0-4623-a364-3dc34b3e1a4a/maharashtra-state-seal.png";
 const mahabocwLogo = "/__l5e/assets-v1/7799f571-eaa2-4586-98a4-29c3faa41b2d/mahabocw-logo.png";
 const heroImages = [
   {
