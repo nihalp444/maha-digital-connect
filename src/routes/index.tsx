@@ -21,6 +21,20 @@ import { useMemo, useState } from "react";
 import studiesImage from "@/assets/studies-services.jpg";
 import workerImage from "@/assets/worker-services.jpg";
 import governmentImage from "@/assets/government-services.jpg";
+import unacademyCardImage from "@/assets/unacademy-card.png";
+import mscitCardImage from "@/assets/MSCIT.jpg";
+import skillIndiaCardImage from "@/assets/Skill India.jpg";
+import rplCardImage from "@/assets/RPL.jpg";
+import welfareSchemesImage from "@/assets/Welfare Schemes.jpg";
+import financialAssistanceImage from "@/assets/Financial Assistance.jpg";
+import educationAssistanceImage from "@/assets/Education Assistance.jpg";
+import healthBenefitsImage from "@/assets/Health Benefits.jpg";
+import workerRegistrationImage from "@/assets/Worker Registration.jpg";
+import aapleSarkarImage from "@/assets/Aaple Sarkar.jpg";
+import mahaOnlineImage from "@/assets/MahaOnline.jpg";
+import eShramImage from "@/assets/e-Shram.jpg";
+import nationalCareerServiceImage from "@/assets/National Career Service.jpg";
+import maharashtraGovernmentImage from "@/assets/Maharashtra Government.jpg";
 
 const maharashtraSeal = "/__l5e/assets-v1/c9e43318-83b0-4623-a364-3dc34b3e1a4a/maharashtra-state-seal.png";
 const nationalEmblem = "/__l5e/assets-v1/6507b783-3002-4840-b6ca-b4eebdd94886/maharashtra-government-emblem.png";
@@ -55,10 +69,10 @@ const serviceSections = [
     accent: "education",
     image: studiesImage,
     cards: [
-      { name: "Unacademy", description: "Online classes and learning resources", icon: GraduationCap, href: "https://unacademy.com/", mark: "UA" },
-      { name: "MS-CIT", description: "Maharashtra's digital literacy course", icon: BookOpen, href: "https://mscit.mkcl.org/", mark: "MS" },
-      { name: "Skill India", description: "Government skill courses and opportunities", icon: BriefcaseBusiness, href: "https://www.skillindia.gov.in/", mark: "SI" },
-      { name: "RPL / Skill Development", description: "Recognition and practical skills training", icon: Wrench, href: "https://pmkvy.gov.in/", mark: "RPL" },
+      { name: "Unacademy", description: "Online classes and learning resources", icon: GraduationCap, href: "https://unacademy.com/", mark: "UA", image: unacademyCardImage },
+      { name: "MS-CIT", description: "Maharashtra's digital literacy course", icon: BookOpen, href: "https://mscit.mkcl.org/", mark: "MS", image: mscitCardImage },
+      { name: "Skill India", description: "Government skill courses and opportunities", icon: BriefcaseBusiness, href: "https://www.skillindia.gov.in/", mark: "SI", image: skillIndiaCardImage },
+      { name: "RPL / Skill Development", description: "Recognition and practical skills training", icon: Wrench, href: "https://pmkvy.gov.in/", mark: "RPL", image: rplCardImage },
     ],
   },
   {
@@ -70,11 +84,11 @@ const serviceSections = [
     accent: "worker",
     image: workerImage,
     cards: [
-      { name: "Welfare Schemes", description: "Explore welfare support available to workers", icon: ShieldCheck, href: "https://mahabocw.in/en/welfare-schemes/", mark: "WS" },
-      { name: "Financial Assistance", description: "Social security and financial support", icon: WalletCards, href: "https://mahabocw.in/en/social-security/", mark: "FA" },
-      { name: "Education Assistance", description: "Education support for workers' families", icon: GraduationCap, href: "https://mahabocw.in/en/education-schemes/", mark: "EA" },
-      { name: "Health Benefits", description: "Health schemes and medical assistance", icon: Stethoscope, href: "https://mahabocw.in/en/health-schemes/", mark: "HB" },
-      { name: "Worker Registration / Renewal", description: "Register or renew a construction worker record", icon: UserRoundCheck, href: "https://mahabocw.in/en/construction-worker-registration/", mark: "WR" },
+      { name: "Welfare Schemes", description: "Explore welfare support available to workers", icon: ShieldCheck, href: "https://mahabocw.in/en/welfare-schemes/", mark: "WS", image: welfareSchemesImage },
+      { name: "Financial Assistance", description: "Social security and financial support", icon: WalletCards, href: "https://mahabocw.in/en/welfare-schemes/", mark: "FA", image: financialAssistanceImage },
+      { name: "Education Assistance", description: "Education support for workers' families", icon: GraduationCap, href: "https://mahabocw.in/en/welfare-schemes/", mark: "EA", image: educationAssistanceImage },
+      { name: "Health Benefits", description: "Health schemes and medical assistance", icon: Stethoscope, href: "https://mahabocw.in/en/welfare-schemes/", mark: "HB", image: healthBenefitsImage },
+      { name: "Worker Registration / Renewal", description: "Register or renew a construction worker record", icon: UserRoundCheck, href: "https://iwbms.mahabocw.in/registration-and-renewal/registration", mark: "WR", image: workerRegistrationImage },
     ],
   },
   {
@@ -86,11 +100,11 @@ const serviceSections = [
     accent: "government",
     image: governmentImage,
     cards: [
-      { name: "Aaple Sarkar", description: "Certificates and citizen services", icon: Landmark, href: "https://aaplesarkar.maharashtra.gov.in/", mark: "AS" },
-      { name: "MahaOnline", description: "Digital public services across Maharashtra", icon: ShieldCheck, href: "https://www.mahaonline.gov.in/", mark: "MO" },
-      { name: "e-Shram", description: "National database and services for workers", icon: UserRoundCheck, href: "https://eshram.gov.in/", mark: "ES" },
-      { name: "National Career Service", description: "Jobs, career guidance and employment services", icon: BriefcaseBusiness, href: "https://www.ncs.gov.in/", mark: "NCS" },
-      { name: "Maharashtra Government", description: "Official Government of Maharashtra portal", icon: Landmark, href: "https://maharashtra.gov.in/", mark: "महा" },
+      { name: "Aaple Sarkar", description: "Certificates and citizen services", icon: Landmark, href: "https://aaplesarkar.maharashtra.gov.in/", mark: "AS", image: aapleSarkarImage },
+      { name: "MahaOnline", description: "Digital public services across Maharashtra", icon: ShieldCheck, href: "https://aaplesarkar.mahaonline.gov.in/en", mark: "MO", image: mahaOnlineImage },
+      { name: "e-Shram", description: "National database and services for workers", icon: UserRoundCheck, href: "https://eshram.gov.in/", mark: "ES", image: eShramImage },
+      { name: "National Career Service", description: "Jobs, career guidance and employment services", icon: BriefcaseBusiness, href: "https://www.ncs.gov.in/", mark: "NCS", image: nationalCareerServiceImage },
+      { name: "Maharashtra Government", description: "Official Government of Maharashtra portal", icon: Landmark, href: "https://maharashtra.gov.in/", mark: "महा", image: maharashtraGovernmentImage },
     ],
   },
 ] as const;
@@ -187,7 +201,7 @@ function Index() {
                       return (
                         <a key={card.name} href={card.href} target="_blank" rel="noreferrer" className="portal-card">
                           <div className="portal-visual">
-                            <img src={section.image} alt="" loading="lazy" width={1280} height={720} />
+                            <img src={"image" in card && card.image ? card.image : section.image} alt={card.name} loading="lazy" width={1280} height={720} />
                             <span className="portal-shade" aria-hidden="true" />
                             <div className="portal-mark">{card.mark}</div>
                             <CardIcon size={30} strokeWidth={1.7} aria-hidden="true" />
