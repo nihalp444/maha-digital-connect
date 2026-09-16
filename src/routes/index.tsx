@@ -71,8 +71,8 @@ const serviceSections = [
     cards: [
       { name: "Unacademy", description: "Online classes and learning resources", icon: GraduationCap, href: "https://unacademy.com/", mark: "UA", image: unacademyCardImage },
       { name: "MS-CIT", description: "Maharashtra's digital literacy course", icon: BookOpen, href: "https://mscit.mkcl.org/", mark: "MS", image: mscitCardImage },
-      { name: "Skill India", description: "Government skill courses and opportunities", icon: BriefcaseBusiness, href: "https://www.skillindia.gov.in/", mark: "SI", image: skillIndiaCardImage },
-      { name: "RPL / Skill Development", description: "Recognition and practical skills training", icon: Wrench, href: "https://pmkvy.gov.in/", mark: "RPL", image: rplCardImage },
+      { name: "Skill India", description: "Government skill courses and opportunities", icon: BriefcaseBusiness, href: "https://www.skillindiadigital.gov.in/home", mark: "SI", image: skillIndiaCardImage },
+      { name: "RPL / Skill Development", description: "Recognition and practical skills training", icon: Wrench, href: "https://rpl.nimilearningonline.in/", mark: "RPL", image: rplCardImage },
     ],
   },
   {
